@@ -45,7 +45,7 @@ public class Character {
     // Getters and Setters
 
     public static String[] getAllRaces() {
-        return new String[] {"Dwarf", "Elf", "Gnome", "Half-Elf", "Half-Orc", "Halfling", "Other"};
+        return new String[] {"Dwarf", "Elf", "Gnome", "Half-Elf", "Half-Orc", "Halfling", "Human", "Other"};
     }
 
     public static String[] getAllClasses() {

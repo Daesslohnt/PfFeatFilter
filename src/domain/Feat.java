@@ -161,7 +161,7 @@ public class Feat {
                     result.add(p);
                 }
             } else if (racesSet.contains(iteml)){ // Race
-                PrerequisiteCategoric p = new PrerequisiteCategoric(item, "Race", item);
+                PrerequisiteCategoric p = new PrerequisiteCategoric(item, "Race", iteml);
                 result.add(p);
             }
         }

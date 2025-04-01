@@ -107,6 +107,8 @@ public class Filter {
                     filtered.add(feat);
                 } else if (cat.equals("General Level") && currentCharacter.getLevel() >= (int) func) {
                     filtered.add(feat);
+                } else if (cat.equals("Race") && currentCharacter.getRace().toLowerCase().equals((String) func)) {
+                    filtered.add(feat);
                 } else {
                     break;
                 }
