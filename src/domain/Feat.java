@@ -163,9 +163,17 @@ public class Feat {
             } else if (racesSet.contains(iteml)){ // Race
                 PrerequisiteCategoric p = new PrerequisiteCategoric(item, "Race", iteml);
                 result.add(p);
+            } else if (iteml.contains("will")) {
+                PrerequisiteNumeric p = new PrerequisiteNumeric(item, "Will", extractIntFromString(iteml));
+                result.add(p);
+            } else if (iteml.contains("fort")) {
+                PrerequisiteNumeric p = new PrerequisiteNumeric(item, "Fort", extractIntFromString(iteml));
+                result.add(p);
+            } else if (iteml.contains("ref")) {
+                PrerequisiteNumeric p = new PrerequisiteNumeric(item, "Ref", extractIntFromString(iteml));
+                result.add(p);
             }
         }
-
         return result;
     }
 }

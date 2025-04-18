@@ -86,35 +86,44 @@ public class Filter {
                 filtered.add(feat);
                 continue;
             }
+            boolean isFulfilled = false;
             for (int i = 0; i < prerequisites.size(); i++){
                 Object func = prerequisites.get(i).getFunctionality();
                 String cat = prerequisites.get(i).getCategory();
                 if (cat.equals("BAB") && currentCharacter.getBAB() == (int) func){
-                    filtered.add(feat);
+                    isFulfilled = true;
                 } else if (cat.equals("Strength") && currentCharacter.getSTR() >= (int) func) {
-                    filtered.add(feat);
+                    isFulfilled = true;
                 } else if (cat.equals("Dexterity") && currentCharacter.getDEX() >= (int) func) {
-                    filtered.add(feat);
+                    isFulfilled = true;
                 } else if (cat.equals("Constitution") && currentCharacter.getCON() >= (int) func) {
-                    filtered.add(feat);
+                    isFulfilled = true;
                 } else if (cat.equals("Intelligence") && currentCharacter.getINT() >= (int) func) {
-                    filtered.add(feat);
+                    isFulfilled = true;
                 } else if (cat.equals("Wisdom") && currentCharacter.getWIS() >= (int) func) {
-                    filtered.add(feat);
+                    isFulfilled = true;
                 } else if (cat.equals("Charisma") && currentCharacter.getCHA() >= (int) func) {
-                    filtered.add(feat);
+                    isFulfilled = true;
                 } else if (cat.equals("Caster Level") && currentCharacter.getLevel() >= (int) func) {
-                    filtered.add(feat);
+                    isFulfilled = true;
                 } else if (cat.equals("General Level") && currentCharacter.getLevel() >= (int) func) {
-                    filtered.add(feat);
+                    isFulfilled = true;
                 } else if (cat.equals("Race")) {
                     String r = currentCharacter.getRace();
                     if (r != null && r.toLowerCase().equals((String) func))
-                        filtered.add(feat);
+                        isFulfilled = true;
+                } else if (cat.equals("Will") && currentCharacter.getWill() >= (int) func) {
+                    isFulfilled = true;
+                } else if (cat.equals("Fort") && currentCharacter.getFort() >= (int) func) {
+                    isFulfilled = true;
+                } else if (cat.equals("Ref") && currentCharacter.getRef() >= (int) func) {
+                    isFulfilled = true;
                 } else {
+                    isFulfilled = false;
                     break;
                 }
             }
+            if (isFulfilled) filtered.add(feat);
         }
         return filtered;
     }
